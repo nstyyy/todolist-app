@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div id="notification" class="hidden"></div>
+  <header>
+    <h1>Liste de tâches</h1>
+    <button id="logout">Déconnexion</button>
+  </header>
+
+  <main>
+    <section id="todo" class="category">
+      <h2>À Faire</h2>
+      <div class="task-list"></div>
+    </section>
+
+    <section id="in_progress" class="category">
+      <h2>En Cours</h2>
+      <div class="task-list"></div>
+    </section>
+
+    <section id="done" class="category">
+      <h2>Terminé</h2>
+      <div class="task-list"></div>
+    </section>
+  </main>
+
+  <form id="taskForm">
+    <input type="text" id="title" placeholder="Titre de la tâche" required>
+    <textarea id="description" placeholder="Description" required></textarea>
+    <button type="submit">Ajouter une tâche</button>
+  </form>
+
+  <!-- Fenêtre modale -->
+  <div class="modal-overlay"></div>
+  <div class="modal" id="taskDetailsModal">
+    <h3><input type="text" id="taskTitleInput" class="modal-input"></h3>
+    <p><strong>Description :</strong></p>
+    <textarea id="taskDescriptionInput" class="modal-input"></textarea>
+    <p><strong>Date de création :</strong> <span id="taskDate"></span></p>
+    <p><strong>Créateur :</strong> <span id="taskCreator"></span></p>
+    <button id="saveChanges">Enregistrer</button>
+    <button id="deleteTask">Supprimer</button>
+    <button id="closeModal">Fermer</button>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

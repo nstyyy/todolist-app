@@ -1,0 +1,197 @@
+/* Style général */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #3f51b5;
+  color: white;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+header button:hover {
+  background-color: #d32f2f;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Notifications */
+#notification {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #4caf50; /* Vert pour succès */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+  transform: translateY(-20px);
+}
+
+#notification.error {
+  background-color: #f44336; /* Rouge pour erreur */
+}
+
+#notification.hidden {
+  display: none;
+}
+
+/* Catégories */
+.category {
+  flex: 1;
+  margin: 0 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: 2px solid black;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.category h2 {
+  text-align: center;
+  color: black;
+}
+
+/* Tâches */
+.task-list {
+  min-height: 200px;
+}
+
+.task {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: grab;
+  transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+}
+
+.task:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.task.dragging {
+  opacity: 0.5;
+  transform: rotate(5deg);
+}
+
+/* Couleurs des tâches */
+#todo .task {
+  border: 2px solid #f44336;
+}
+
+#in_progress .task {
+  border: 2px solid #ff9800;
+}
+
+#done .task {
+  border: 2px solid #4caf50;
+}
+
+/* Formulaire */
+form {
+  padding: 20px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+form input, form textarea, form button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+form button {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #303f9f;
+}
+
+/* Fenêtre modale */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 400px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 20px;
+  display: none;
+  border: 3px solid #3f51b5; /* Contour ajouté */
+}
+
+.modal h3, .modal p {
+  margin: 10px 0;
+}
+
+.modal button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  background-color: #303f9f;
+}
+
+#deleteTask {
+  background-color: #f44336;
+}
+
+#deleteTask:hover {
+  background-color: #d32f2f;
+}
+
+.modal-input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
